@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lamboprojects.github.io/sitemap.xml
+Sitemap: https://lambertbadong.github.io/sitemap.xml
