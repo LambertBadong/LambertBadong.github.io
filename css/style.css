@@ -56,8 +56,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset
 .btn:hover{transform:translateY(-2px);box-shadow:0 0 0 2px var(--acc),0 10px 22px rgba(22,34,56,0.14)}
 .btn:active,.row:active{transform:translateY(1px) scale(.97)}
 .chip{cursor:default;user-select:none}
-.chip:hover{border-color:var(--acc);background-color:#fdf1ed}
-.chip:active{transform:scale(.92);border-color:var(--acc)}
 .row:hover{background-color:#fdf1ed;box-shadow:inset 0 0 0 1px var(--acc)}
 .lnk{background-image:linear-gradient(var(--acc),var(--acc));background-size:0 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s ease,transform .15s}
 .lnk:hover{background-size:100% 2px}
@@ -243,7 +241,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset
 .shot.on{opacity:1;transform:none}
 /* micro-interactions: independent scale / translate / rotate so they never fight transform animations */
 .btn,.cbtn,.pbtn,.krow,.row,.chip,.bal,.lnk,.trow,.botbtn{transition-property:transform,box-shadow,background-color,border-color,color,background-size,scale,translate;transition-duration:.2s,.2s,.2s,.2s,.2s,.3s,.5s,.35s;transition-timing-function:ease,ease,ease,ease,ease,ease,cubic-bezier(.3,1.8,.4,1),cubic-bezier(.22,1,.36,1)}
-.btn:active,.cbtn:active,.pbtn:active,.krow:active,.row:active,.chip:active,.bal:active,.lnk:active,.trow:active,.botbtn:active{scale:.96;transition-duration:.08s}
+.btn:active,.cbtn:active,.pbtn:active,.krow:active,.row:active,.bal:active,.lnk:active,.trow:active,.botbtn:active{scale:.96;transition-duration:.08s}
 .btn:hover{transform:none;translate:0 -2px}
 .btn:active,.row:active,.cbtn:active,.krow:active,.bal:active,.chip:active,.lnk:active{transform:none}
 .bal.on{transform:scale(1.14)}
@@ -290,6 +288,8 @@ img{max-width:100%}
 .site>nav,.site>footer,.site>main>section{padding-left:max(clamp(16px,4.4vw,64px),calc((100% - 1280px)/2))!important;padding-right:max(clamp(16px,4.4vw,64px),calc((100% - 1280px)/2))!important}
 .site>nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(8px);-webkit-backdrop-filter:saturate(1.2) blur(8px)}
 .navlinks{display:flex;align-items:center;gap:32px}
+.navlinks .menu-only{display:none}
+.navres{margin-right:-20px}
 .menu-btn{display:none;white-space:nowrap;align-items:center;gap:8px;padding:9px 12px;border-radius:8px;border:1px solid #c3cad4;background:#fff;color:#1d2b45;font:500 14px 'IBM Plex Mono',ui-monospace,monospace;cursor:pointer}
 .menu-btn svg{transition:transform .3s}
 .motion-btn{display:inline-flex;white-space:nowrap;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;border:1px solid #c3cad4;background:#fff;color:#1d2b45;font:500 12.5px 'IBM Plex Mono',ui-monospace,monospace;cursor:pointer}
@@ -348,6 +348,7 @@ img{max-width:100%}
   .menu-btn{display:inline-flex}
   .site>nav{flex-wrap:wrap;height:auto!important;min-height:64px;gap:12px!important;padding-top:10px!important;padding-bottom:10px!important}
   .site>nav>.btn{display:none!important}
+  .navlinks .menu-only{display:block}
   .navlinks{display:none;order:9;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding:6px 0 10px}
   .navlinks a{padding:12px 6px!important;font-size:17px!important;border-radius:8px}
   .navlinks .motion-btn{align-self:flex-start;margin-top:8px}
@@ -397,3 +398,6 @@ img{max-width:100%}
   .ctrlbar .cbtn{flex:1 1 45%;justify-content:center}
   .bots-row{transform:scale(.85);transform-origin:left bottom}
 }
+
+/* chips are static labels */
+.chip,.chip:hover,.chip:active{scale:1!important;transform:none!important;border-color:#cdd4dd!important;background-color:#ffffff!important;cursor:default}

@@ -26,7 +26,7 @@
     const P = [null,
       ['1', 'FoxFab Engineering Vault', 'An Obsidian second brain for the switchgear design team.', '#p1'],
       ['2', 'Engineering Tool Hub', 'One app for every job\u2019s BOMs, revisions, exports and prints.', '#p2'],
-      ['3', 'Daybook DMS', 'Offline, encrypted daycare software \u2014 licensed to other centres.', '#p3'],
+      ['3', 'Daybook DMS', 'Offline, encrypted daycare software for small daycares.', '#p3'],
       ['4', 'Kobe Bot', 'A Discord bot that runs our household from chat.', '#p4'],
       ['5', 'Project KOBE', 'Voice AI desk assistant \u2014 work in progress.', '#p5']];
     const view = sel ? 'v' + sel : (ex ? (flip ? 'vxf' : 'vx') : (flip ? 'v0f' : 'v0'));
@@ -151,6 +151,18 @@
     nav.addEventListener('click', function (e) { if (e.target.closest('.navlinks a')) setMenu(false); });
     nav.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); menu.focus(); } });
   }
+
+  /* ---- logo / back-to-top: smooth scroll to the very top, close the menu */
+  var reduceMq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#top"]'), function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (menu) setMenu(false);
+      var smooth = !(reduceMq && reduceMq.matches) && motion;
+      window.scrollTo({ top: 0, left: 0, behavior: smooth ? 'smooth' : 'auto' });
+      if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    });
+  });
 
   /* ---- scale the fixed-size 3D stages to their column */
   var fits = Array.prototype.slice.call(document.querySelectorAll('.fit'));
