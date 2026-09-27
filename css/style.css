@@ -401,3 +401,7 @@ img{max-width:100%}
 
 /* chips are static labels */
 .chip,.chip:hover,.chip:active{scale:1!important;transform:none!important;border-color:#cdd4dd!important;background-color:#ffffff!important;cursor:default}
+
+/* skills: 3 x 2 -> 2 cols (<=1024) -> 1 col (<=640) */
+@media (max-width:1024px){.skillgrid.skillgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:640px){.skillgrid.skillgrid{grid-template-columns:minmax(0,1fr)!important}}
