@@ -11,7 +11,8 @@ css/style.css     all styles: design, CSS-3D models, animations, responsive rule
 js/main.js        interactions: camera views, door/explode/rotate, section cut, HUD boot,
                   laptop screens, part spins, Tool Hub rows, agent nodes, bots, mobile menu,
                   motion toggle, stage scaling, scroll-reveal fallback
-assets/img/       Daybook screenshots + icon (WebP with PNG fallback), og.png share image
+assets/img/       Daybook, Tool Hub and Vault screenshots + icon (WebP with PNG fallback),
+                  og.png share image
 favicon.svg       "LB" monogram
 robots.txt, sitemap.xml, .nojekyll
 ```
