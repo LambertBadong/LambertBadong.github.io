@@ -24,11 +24,11 @@
     const bump = (k, extra) => this.setState(Object.assign({ taps: Object.assign({}, taps, { [k]: (taps[k] || 0) + 1 }) }, extra || {}));
     const ab = k => { const n = taps[k] || 0; return n === 0 ? '' : (n % 2 ? ' ta' : ' tb'); };
     const P = [null,
-      ['1', 'FoxFab Engineering Vault', 'An Obsidian second brain for the switchgear design team.', '#p1'],
+      ['1', 'FoxFab Engineering Vault', 'A personal knowledge base that gives my AI agents their context.', '#p1'],
       ['2', 'Engineering Tool Hub', 'One app for every job\u2019s BOMs, revisions, exports and prints.', '#p2'],
       ['3', 'Daybook DMS', 'Offline, encrypted daycare software for small daycares.', '#p3'],
       ['4', 'Kobe Bot', 'A Discord bot that runs our household from chat.', '#p4'],
-      ['5', 'Project KOBE', 'Voice AI desk assistant \u2014 work in progress.', '#p5']];
+      ['5', 'Project KOBE', 'Voice AI desk assistant \u2014 seven phases written, still in progress.', '#p5']];
     const view = sel ? 'v' + sel : (ex ? (flip ? 'vxf' : 'vx') : (flip ? 'v0f' : 'v0'));
     const rest = !sel && !ex && !flip;
     const cap = P[sel] || P[1];
